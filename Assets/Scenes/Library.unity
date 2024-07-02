@@ -214,15 +214,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1652977998651155331, guid: 43630538de791c332a276a09afd3d97e, type: 3}
       propertyPath: bookTitle
-      value: Ananas
+      value: Woodwalkers
       objectReference: {fileID: 0}
     - target: {fileID: 1652977998651155331, guid: 43630538de791c332a276a09afd3d97e, type: 3}
       propertyPath: bookAuthor
-      value: Aki Henningsen
+      value: Katja Brandis
       objectReference: {fileID: 0}
     - target: {fileID: 1652977998651155331, guid: 43630538de791c332a276a09afd3d97e, type: 3}
       propertyPath: bookDescription
-      value: Ananas ist einfach Toll
+      value: "Diese Fantasy-Reihe erz\xE4hlt die Geschichte von Carag, einem Jungen,
+        der sich in ein Tier verwandeln kann. Er entdeckt seine F\xE4higkeiten und
+        wird Teil einer Gemeinschaft von Gestaltwandlern."
       objectReference: {fileID: 0}
     - target: {fileID: 4531878590277973192, guid: 43630538de791c332a276a09afd3d97e, type: 3}
       propertyPath: m_Name
@@ -1273,6 +1275,20 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 807841432}
     m_Modifications:
+    - target: {fileID: 1652977998651155331, guid: 43630538de791c332a276a09afd3d97e, type: 3}
+      propertyPath: bookTitle
+      value: Der Herr der Ringe
+      objectReference: {fileID: 0}
+    - target: {fileID: 1652977998651155331, guid: 43630538de791c332a276a09afd3d97e, type: 3}
+      propertyPath: bookAuthor
+      value: J.R.R. Tolkien
+      objectReference: {fileID: 0}
+    - target: {fileID: 1652977998651155331, guid: 43630538de791c332a276a09afd3d97e, type: 3}
+      propertyPath: bookDescription
+      value: "Ein episches Fantasy-Werk, das die Abenteuer von Frodo Beutlin und
+        seinen Gef\xE4hrten im Kampf gegen den dunklen Herrscher Sauron erz\xE4hlt.
+        Es gilt als eines der bedeutendsten Werke der Fantasy-Literatur."
+      objectReference: {fileID: 0}
     - target: {fileID: 4531878590277973192, guid: 43630538de791c332a276a09afd3d97e, type: 3}
       propertyPath: m_Name
       value: Book (1)
@@ -1534,6 +1550,19 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 807841432}
     m_Modifications:
+    - target: {fileID: 1652977998651155331, guid: 43630538de791c332a276a09afd3d97e, type: 3}
+      propertyPath: bookTitle
+      value: Gregs Tagebuch
+      objectReference: {fileID: 0}
+    - target: {fileID: 1652977998651155331, guid: 43630538de791c332a276a09afd3d97e, type: 3}
+      propertyPath: bookAuthor
+      value: Jeff Kinney
+      objectReference: {fileID: 0}
+    - target: {fileID: 1652977998651155331, guid: 43630538de791c332a276a09afd3d97e, type: 3}
+      propertyPath: bookDescription
+      value: "Eine Comic-Roman-Reihe, die die allt\xE4glichen Abenteuer und Missgeschicke
+        des jugendlichen Greg Heffley auf humorvolle Weise schildert."
+      objectReference: {fileID: 0}
     - target: {fileID: 4531878590277973192, guid: 43630538de791c332a276a09afd3d97e, type: 3}
       propertyPath: m_Name
       value: Book (9)
@@ -2721,6 +2750,20 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 807841432}
     m_Modifications:
+    - target: {fileID: 1652977998651155331, guid: 43630538de791c332a276a09afd3d97e, type: 3}
+      propertyPath: bookTitle
+      value: "Percy Jackson \u2013 Diebe im Olymp"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1652977998651155331, guid: 43630538de791c332a276a09afd3d97e, type: 3}
+      propertyPath: bookAuthor
+      value: Rick Riordan
+      objectReference: {fileID: 0}
+    - target: {fileID: 1652977998651155331, guid: 43630538de791c332a276a09afd3d97e, type: 3}
+      propertyPath: bookDescription
+      value: "Der erste Band der \u201EPercy Jackson\u201C-Reihe, in dem Percy erf\xE4hrt,
+        dass er ein Halbgott ist und auf eine gef\xE4hrliche Mission geht, um den
+        gestohlenen Blitz des Zeus zur\xFCckzubringen."
+      objectReference: {fileID: 0}
     - target: {fileID: 4531878590277973192, guid: 43630538de791c332a276a09afd3d97e, type: 3}
       propertyPath: m_Name
       value: Book (2)
@@ -3263,6 +3306,19 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 807841432}
     m_Modifications:
+    - target: {fileID: 1652977998651155331, guid: 43630538de791c332a276a09afd3d97e, type: 3}
+      propertyPath: bookTitle
+      value: Die Chroniken von Narnia
+      objectReference: {fileID: 0}
+    - target: {fileID: 1652977998651155331, guid: 43630538de791c332a276a09afd3d97e, type: 3}
+      propertyPath: bookAuthor
+      value: C.S. Lewis
+      objectReference: {fileID: 0}
+    - target: {fileID: 1652977998651155331, guid: 43630538de791c332a276a09afd3d97e, type: 3}
+      propertyPath: bookDescription
+      value: "Eine Fantasy-Serie, die Kinder in die magische Welt von Narnia f\xFChrt,
+        wo sie spannende Abenteuer erleben und gegen das B\xF6se k\xE4mpfen."
+      objectReference: {fileID: 0}
     - target: {fileID: 4531878590277973192, guid: 43630538de791c332a276a09afd3d97e, type: 3}
       propertyPath: m_Name
       value: Book (8)
@@ -3521,15 +3577,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1652977998651155331, guid: 43630538de791c332a276a09afd3d97e, type: 3}
       propertyPath: bookTitle
-      value: Ananas
+      value: Harry Potter und der Stein der Weisen
       objectReference: {fileID: 0}
     - target: {fileID: 1652977998651155331, guid: 43630538de791c332a276a09afd3d97e, type: 3}
       propertyPath: bookAuthor
-      value: Aki Henningsen
+      value: J.K. Rowling
       objectReference: {fileID: 0}
     - target: {fileID: 1652977998651155331, guid: 43630538de791c332a276a09afd3d97e, type: 3}
       propertyPath: bookDescription
-      value: Ananas ist einfach Toll
+      value: "Der erste Band der weltber\xFChmten Harry-Potter-Serie, in dem Harry
+        erf\xE4hrt, dass er ein Zauberer ist und zum ersten Mal die magische Welt
+        von Hogwarts betritt."
       objectReference: {fileID: 0}
     - target: {fileID: 4531878590277973192, guid: 43630538de791c332a276a09afd3d97e, type: 3}
       propertyPath: m_Name
@@ -4001,6 +4059,19 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 807841432}
     m_Modifications:
+    - target: {fileID: 1652977998651155331, guid: 43630538de791c332a276a09afd3d97e, type: 3}
+      propertyPath: bookTitle
+      value: "Die K\xE4nguru-Chroniken"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1652977998651155331, guid: 43630538de791c332a276a09afd3d97e, type: 3}
+      propertyPath: bookAuthor
+      value: Marc-Uwe Kling
+      objectReference: {fileID: 0}
+    - target: {fileID: 1652977998651155331, guid: 43630538de791c332a276a09afd3d97e, type: 3}
+      propertyPath: bookDescription
+      value: "Eine humorvolle Buchreihe, die die skurrilen und philosophischen Dialoge
+        zwischen einem Kleink\xFCnstler und einem kommunistischen K\xE4nguru erz\xE4hlt."
+      objectReference: {fileID: 0}
     - target: {fileID: 4531878590277973192, guid: 43630538de791c332a276a09afd3d97e, type: 3}
       propertyPath: m_Name
       value: Book (4)
@@ -7353,15 +7424,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1652977998651155331, guid: 43630538de791c332a276a09afd3d97e, type: 3}
       propertyPath: bookTitle
-      value: Ananas
+      value: Tschick
       objectReference: {fileID: 0}
     - target: {fileID: 1652977998651155331, guid: 43630538de791c332a276a09afd3d97e, type: 3}
       propertyPath: bookAuthor
-      value: Aki Henningsen
+      value: Wolfgang Herrndorf
       objectReference: {fileID: 0}
     - target: {fileID: 1652977998651155331, guid: 43630538de791c332a276a09afd3d97e, type: 3}
       propertyPath: bookDescription
-      value: Ananas ist einfach Toll
+      value: "Ein humorvoller und tiefgr\xFCndiger Roman \xFCber zwei jugendliche
+        Au\xDFenseiter, die in einem gestohlenen Lada auf eine abenteuerliche Reise
+        quer durch Deutschland gehen."
       objectReference: {fileID: 0}
     - target: {fileID: 4531878590277973192, guid: 43630538de791c332a276a09afd3d97e, type: 3}
       propertyPath: m_Name
@@ -7579,15 +7652,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1652977998651155331, guid: 43630538de791c332a276a09afd3d97e, type: 3}
       propertyPath: bookTitle
-      value: Ananas
+      value: Erebos
       objectReference: {fileID: 0}
     - target: {fileID: 1652977998651155331, guid: 43630538de791c332a276a09afd3d97e, type: 3}
       propertyPath: bookAuthor
-      value: Aki Henningsen
+      value: Ursula Poznanski
       objectReference: {fileID: 0}
     - target: {fileID: 1652977998651155331, guid: 43630538de791c332a276a09afd3d97e, type: 3}
       propertyPath: bookDescription
-      value: Ananas ist einfach Toll
+      value: "Ein fesselnder Jugendroman \xFCber ein Computerspiel, das seine Spieler
+        in die reale Welt zieht und sie zu gef\xE4hrlichen Aufgaben zwingt. Der Protagonist
+        Nick muss herausfinden, wer hinter diesem Spiel steckt."
       objectReference: {fileID: 0}
     - target: {fileID: 4531878590277973192, guid: 43630538de791c332a276a09afd3d97e, type: 3}
       propertyPath: m_Name
