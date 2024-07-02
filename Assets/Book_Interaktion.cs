@@ -21,7 +21,7 @@ public class BookInteraction : MonoBehaviour
         {
             float distance = Vector2.Distance(transform.position, player.transform.position);
             playerInRange = distance <= interactionDistance;
-            if (playerInRange && Input.GetKeyDown(KeyCode.E))
+            if (playerInRange && Input.GetKeyDown(KeyCode.Return))
             {
                 ShowBookInfo();
             }

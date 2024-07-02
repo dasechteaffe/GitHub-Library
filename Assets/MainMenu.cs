@@ -11,17 +11,36 @@ public class MainMenu : MonoBehaviour
     public Button databaseButton;
     public TextMeshProUGUI databaseText; // Geändert zu TextMeshProUGUI
 
-    private string dbName = "URI=file:BookDatabase.db"; // Geändert zu BookDatabase.db
+    private string dbName = "URI=file:BookDatabase.db"; 
+    private bool isDatabaseVisible = false; // Variable zum Überprüfen der Sichtbarkeit
 
     void Start()
     {
         startButton.onClick.AddListener(StartGame);
-        databaseButton.onClick.AddListener(AccessDatabase);
+        databaseButton.onClick.AddListener(ToggleDatabaseVisibility);
+        databaseText.gameObject.SetActive(false); // Anfangs ist das Textfeld nicht sichtbar
     }
 
     void StartGame()
     {
-        SceneManager.LoadScene("Library"); // Geändert zu "Library"
+        SceneManager.LoadScene("Library"); 
+    }
+
+    void ToggleDatabaseVisibility()
+    {
+        if (isDatabaseVisible)
+        {
+            // Wenn das Textfeld sichtbar ist, verstecken
+            databaseText.gameObject.SetActive(false);
+            isDatabaseVisible = false;
+        }
+        else
+        {
+            // Wenn das Textfeld nicht sichtbar ist, Datenbankzugriff und anzeigen
+            AccessDatabase();
+            databaseText.gameObject.SetActive(true);
+            isDatabaseVisible = true;
+        }
     }
 
     void AccessDatabase()
@@ -31,19 +50,19 @@ public class MainMenu : MonoBehaviour
             connection.Open();
             using (var command = connection.CreateCommand())
             {
-                command.CommandText = "SELECT * FROM Books"; // Angenommen, Ihre Tabelle heißt "Books"
+                command.CommandText = "SELECT * FROM Books"; 
                 using (IDataReader reader = command.ExecuteReader())
                 {
                     string data = "";
                     while (reader.Read())
                     {
                         // Angenommen, Ihre Tabelle hat Spalten "Title" und "Author"
-                        data += reader["Title"] + " - " + reader["Author"] + " - " + reader["Borrower"] + "\n";
-
+                        data += reader["Title"] + " von " + reader["Author"] + " - " + reader["Borrower"] + "\n";
                     }
-                    databaseText.text = data; // TextMeshPro verwendet einfach .text
+                    databaseText.text = data; 
                 }
             }
         }
     }
 }
+
