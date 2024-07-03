@@ -9,7 +9,7 @@ public class MainMenu : MonoBehaviour
 {
     public Button startButton;
     public Button databaseButton;
-    public TextMeshProUGUI databaseText; // Geändert zu TextMeshProUGUI
+    public TextMeshProUGUI databaseText; 
 
     private string dbName = "URI=file:BookDatabase.db"; 
     private bool isDatabaseVisible = false; // Variable zum Überprüfen der Sichtbarkeit
@@ -56,7 +56,6 @@ public class MainMenu : MonoBehaviour
                     string data = "";
                     while (reader.Read())
                     {
-                        // Angenommen, Ihre Tabelle hat Spalten "Title" und "Author"
                         data += reader["Title"] + " von " + reader["Author"] + " - " + reader["Borrower"] + "\n";
                     }
                     databaseText.text = data; 

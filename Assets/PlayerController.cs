@@ -33,14 +33,14 @@ public class PlayerMovementAndClimbing : MonoBehaviour
         animator = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
 
-        // Neue Einstellungen für mehr Stabilität
+        // Neue Einstellungen fÃ¼r mehr StabilitÃ¤t
         rb.freezeRotation = true;
         rb.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
     }
 
     void Update()
     {
-        // Überprüfen, ob der Spieler am Boden ist
+        // ÃœberprÃœfen, ob der Spieler am Boden ist
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, whatIsGround);
 
         // Kletterbewegung
