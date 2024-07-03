@@ -3,7 +3,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Data;
 using Mono.Data.Sqlite;
-using TMPro; // Für TextMeshPro
+using TMPro; 
 
 public class MainMenu : MonoBehaviour
 {

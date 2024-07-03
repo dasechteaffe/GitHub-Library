@@ -1,43 +1,43 @@
-using UnityEngine;
+using UnityEngine; 
 
-public class BookInteraction : MonoBehaviour
+public class BookInteraction : MonoBehaviour 
 {
-    public string bookTitle;
-    public string bookAuthor;
-    public string bookDescription;
-    public float interactionDistance = 2f;
-    private bool playerInRange = false;
-    private GameObject player;
+    public string bookTitle; 
+    public string bookAuthor; 
+    public string bookDescription; 
+    public float interactionDistance = 2f; 
+    private bool playerInRange = false; 
+    private GameObject player; 
 
-    void Start()
+    void Start() 
     {
-        player = GameObject.FindGameObjectWithTag("Player");
-        DatabaseManager.Instance.AddBook(bookTitle, bookAuthor, bookDescription);
+        player = GameObject.FindGameObjectWithTag("Player"); // Findet das Spieler-GameObject anhand seines Tags.
+        DatabaseManager.Instance.AddBook(bookTitle, bookAuthor, bookDescription); 
     }
 
-    void Update()
+    void Update() 
     {
-        if (player != null)
+        if (player != null) // Prüft, ob das Spieler-GameObject gefunden wurde.
         {
-            float distance = Vector2.Distance(transform.position, player.transform.position);
-            playerInRange = distance <= interactionDistance;
-            if (playerInRange && Input.GetKeyDown(KeyCode.Return))
+            float distance = Vector2.Distance(transform.position, player.transform.position); // Berechnet die Distanz zwischen Buch und Spieler.
+            playerInRange = distance <= interactionDistance; 
+            if (playerInRange && Input.GetKeyDown(KeyCode.Return)) 
             {
-                ShowBookInfo();
+                ShowBookInfo(); 
             }
         }
     }
 
-    void ShowBookInfo()
+    void ShowBookInfo() 
     {
-        bool isBorrowed = DatabaseManager.Instance.IsBookBorrowed(bookTitle);
-        string borrower = DatabaseManager.Instance.GetBookBorrower(bookTitle);
-        BookInfoMenu.instance.ShowMenu(bookTitle, bookAuthor, bookDescription, isBorrowed, borrower);
+        bool isBorrowed = DatabaseManager.Instance.IsBookBorrowed(bookTitle); 
+        string borrower = DatabaseManager.Instance.GetBookBorrower(bookTitle); // Holt den Namen des Ausleihers des Buches.
+        BookInfoMenu.instance.ShowMenu(bookTitle, bookAuthor, bookDescription, isBorrowed, borrower); 
     }
 
-    void OnDrawGizmosSelected()
+    void OnDrawGizmosSelected() //Interaktionsgebiet sehen und anzupassen.
     {
         Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position, interactionDistance);
+        Gizmos.DrawWireSphere(transform.position, interactionDistance); 
     }
 }
