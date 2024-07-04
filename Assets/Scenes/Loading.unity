@@ -336,7 +336,7 @@ GameObject:
   - component: {fileID: 861490033}
   - component: {fileID: 861490034}
   m_Layer: 0
-  m_Name: Connect-to-Server
+  m_Name: ConnecttoServer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

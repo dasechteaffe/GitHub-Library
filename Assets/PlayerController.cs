@@ -1,4 +1,5 @@
 using UnityEngine;
+using Photon.Pun;
 
 public class PlayerMovementAndClimbing : MonoBehaviour
 {
@@ -26,6 +27,8 @@ public class PlayerMovementAndClimbing : MonoBehaviour
     private Animator animator;
     private bool facingRight = true;
 
+    PhotonView view;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -36,54 +39,60 @@ public class PlayerMovementAndClimbing : MonoBehaviour
         // Neue Einstellungen für mehr Stabilität
         rb.freezeRotation = true;
         rb.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
+
+        view = GetComponent<PhotonView>();
     }
 
     void Update()
     {
         // ÜberprÜfen, ob der Spieler am Boden ist
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, whatIsGround);
-
-        // Kletterbewegung
-        if (isClimbing)
+        if (view.IsMine)
         {
-            rb.velocity = new Vector2(rb.velocity.x, climbSpeed);
-            rb.gravityScale = 0;
-        }
-        else
-        {
-            float moveHorizontal = Input.GetAxisRaw("Horizontal");
-            rb.velocity = new Vector2(moveHorizontal * moveSpeed, rb.velocity.y);
-
-            animator.SetFloat("Speed", Mathf.Abs(moveHorizontal));
-
-            if (moveHorizontal > 0 && !facingRight)
+            // Kletterbewegung
+            if (isClimbing)
             {
-                Flip();
+                rb.velocity = new Vector2(rb.velocity.x, climbSpeed);
+                rb.gravityScale = 0;
             }
-            else if (moveHorizontal < 0 && facingRight)
+            else
             {
-                Flip();
-            }
+                float moveHorizontal = Input.GetAxisRaw("Horizontal");
+                rb.velocity = new Vector2(moveHorizontal * moveSpeed, rb.velocity.y);
 
-            // Springen
-            if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
-            {
-                PlaySound(jumpSound);
-                rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-            }
+                animator.SetFloat("Speed", Mathf.Abs(moveHorizontal));
 
-            // Laufen Soundeffekte
-            if (moveHorizontal != 0 && isGrounded)
-            {
-                if (!audioSource.isPlaying || audioSource.clip != walkSound)
+                if (moveHorizontal > 0 && !facingRight)
                 {
-                    PlaySound(walkSound);
+                    Flip();
                 }
-            }
+                else if (moveHorizontal < 0 && facingRight)
+                {
+                    Flip();
+                }
 
-            rb.gravityScale = originalGravity;
+                // Springen
+                if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+                {
+                    PlaySound(jumpSound);
+                    rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+                }
+
+                // Laufen Soundeffekte
+                if (moveHorizontal != 0 && isGrounded)
+                {
+                    if (!audioSource.isPlaying || audioSource.clip != walkSound)
+                    {
+                        PlaySound(walkSound);
+                    }
+                }
+
+                rb.gravityScale = originalGravity;
+            }
         }
     }
+
+        
 
     void OnTriggerEnter2D(Collider2D collision)
     {
