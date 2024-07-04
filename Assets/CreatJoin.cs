@@ -22,6 +22,6 @@ public class CreatJoin : MonoBehaviourPunCallbacks
 
     public override void OnJoinedRoom()
     {
-        PhotonNetwork.LoadLevel("Library");
+        PhotonNetwork.LoadLevel("Library_M");
     }
 }

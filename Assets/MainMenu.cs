@@ -23,7 +23,7 @@ public class MainMenu : MonoBehaviour
 
     void StartGame()
     {
-        SceneManager.LoadScene("Library"); 
+        SceneManager.LoadScene("Library_S"); 
     }
 
     void ToggleDatabaseVisibility()
