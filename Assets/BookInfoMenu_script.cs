@@ -19,7 +19,7 @@ public class BookInfoMenu : MonoBehaviour
 
     void Awake() 
     {
-        if (instance == null) // Prüft, ob die Instanz null ist.
+        if (instance == null) // Prüft, ob sie breit exestiert 
         {
             instance = this; // Setzt die Instanz auf dieses Objekt.
             DontDestroyOnLoad(gameObject); // Verhindert, dass das Objekt beim Laden einer neuen Szene zerstört wird.

@@ -56,7 +56,7 @@ public class MainMenu : MonoBehaviour
                     string data = "";
                     while (reader.Read())
                     {
-                        data += reader["Title"] + " von " + reader["Author"] + " - " + reader["Borrower"] + "\n";
+                        data += " | " + reader["Title"] + " von " + reader["Author"] + " ausgeliehen von " + reader["Borrower"] + " | " + "\n";
                     }
                     databaseText.text = data; 
                 }
