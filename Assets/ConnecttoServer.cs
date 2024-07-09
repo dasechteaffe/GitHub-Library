@@ -17,7 +17,7 @@ public class ConnecttoServer : MonoBehaviourPunCallbacks
         audioSource = gameObject.AddComponent<AudioSource>();
         
         PhotonNetwork.ConnectUsingSettings();
-        PhotonNetwork.ConnectToRegion("eu"); // oder eine andere gewünschte Region
+        PhotonNetwork.ConnectToRegion("eu"); 
     }
 
     public override void OnConnectedToMaster()
