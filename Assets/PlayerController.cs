@@ -1,7 +1,7 @@
 using UnityEngine;
 using Photon.Pun;
 
-public class PlayerMovementAndClimbing : MonoBehaviour
+public class PlayerMovementAndClimbing : MonoBehaviourPunCallbacks
 {
     // Bewegungs- und Sprungvariablen
     public float moveSpeed = 5f;
@@ -26,7 +26,6 @@ public class PlayerMovementAndClimbing : MonoBehaviour
     private float originalGravity;
     private Animator animator;
     private bool facingRight = true;
-
     PhotonView view;
 
     void Start()
@@ -36,17 +35,17 @@ public class PlayerMovementAndClimbing : MonoBehaviour
         animator = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
 
-        // Neue Einstellungen für mehr Stabilität
+        // Stabilität
         rb.freezeRotation = true;
         rb.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
-
         view = GetComponent<PhotonView>();
     }
 
     void Update()
     {
-        // ÜberprÜfen, ob der Spieler am Boden ist
+        // Überprüfen, ob der Spieler am Boden ist
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, whatIsGround);
+
         if (view.IsMine)
         {
             // Kletterbewegung
@@ -59,16 +58,15 @@ public class PlayerMovementAndClimbing : MonoBehaviour
             {
                 float moveHorizontal = Input.GetAxisRaw("Horizontal");
                 rb.velocity = new Vector2(moveHorizontal * moveSpeed, rb.velocity.y);
-
                 animator.SetFloat("Speed", Mathf.Abs(moveHorizontal));
 
                 if (moveHorizontal > 0 && !facingRight)
                 {
-                    Flip();
+                    PhotonFlip();
                 }
                 else if (moveHorizontal < 0 && facingRight)
                 {
-                    Flip();
+                    PhotonFlip();
                 }
 
                 // Springen
@@ -92,8 +90,6 @@ public class PlayerMovementAndClimbing : MonoBehaviour
         }
     }
 
-        
-
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Ladder"))
@@ -111,7 +107,13 @@ public class PlayerMovementAndClimbing : MonoBehaviour
         }
     }
 
-    void Flip()
+    void PhotonFlip()
+    {
+        view.RPC("RPC_Flip", RpcTarget.All);
+    }
+
+    [PunRPC]
+    void RPC_Flip()
     {
         facingRight = !facingRight;
         Vector3 theScale = transform.localScale;
