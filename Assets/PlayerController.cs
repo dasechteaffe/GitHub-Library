@@ -1,7 +1,7 @@
 using UnityEngine;
 using Photon.Pun;
 
-public class PlayerMovementAndClimbing : MonoBehaviourPunCallbacks
+public class PlayerMovementAndClimbing : MonoBehaviour
 {
     // Bewegungs- und Sprungvariablen
     public float moveSpeed = 5f;
@@ -26,6 +26,7 @@ public class PlayerMovementAndClimbing : MonoBehaviourPunCallbacks
     private float originalGravity;
     private Animator animator;
     private bool facingRight = true;
+
     PhotonView view;
 
     void Start()
@@ -38,14 +39,14 @@ public class PlayerMovementAndClimbing : MonoBehaviourPunCallbacks
         // Stabilität
         rb.freezeRotation = true;
         rb.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
+
         view = GetComponent<PhotonView>();
     }
 
     void Update()
     {
-        // Überprüfen, ob der Spieler am Boden ist
+        // ÜberprÜfen, ob der Spieler am Boden ist
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, whatIsGround);
-
         if (view.IsMine)
         {
             // Kletterbewegung
@@ -58,15 +59,16 @@ public class PlayerMovementAndClimbing : MonoBehaviourPunCallbacks
             {
                 float moveHorizontal = Input.GetAxisRaw("Horizontal");
                 rb.velocity = new Vector2(moveHorizontal * moveSpeed, rb.velocity.y);
+
                 animator.SetFloat("Speed", Mathf.Abs(moveHorizontal));
 
                 if (moveHorizontal > 0 && !facingRight)
                 {
-                    PhotonFlip();
+                    Flip();
                 }
                 else if (moveHorizontal < 0 && facingRight)
                 {
-                    PhotonFlip();
+                    Flip();
                 }
 
                 // Springen
@@ -90,6 +92,8 @@ public class PlayerMovementAndClimbing : MonoBehaviourPunCallbacks
         }
     }
 
+        
+
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Ladder"))
@@ -107,13 +111,7 @@ public class PlayerMovementAndClimbing : MonoBehaviourPunCallbacks
         }
     }
 
-    void PhotonFlip()
-    {
-        view.RPC("RPC_Flip", RpcTarget.All);
-    }
-
-    [PunRPC]
-    void RPC_Flip()
+    void Flip()
     {
         facingRight = !facingRight;
         Vector3 theScale = transform.localScale;
