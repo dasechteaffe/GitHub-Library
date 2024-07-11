@@ -4246,7 +4246,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
-  distance: 20
+  distance: 10
 --- !u!61 &701415061
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7524,8 +7524,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a545c734c7e8be2ebe40fe7032d3468, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
-  distance: 20
+  speed: 4
+  distance: 7
 --- !u!61 &1432960313
 BoxCollider2D:
   m_ObjectHideFlags: 0
